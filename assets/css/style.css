@@ -1,0 +1,155 @@
+@font-face {
+    font-family: realest;
+    src: url("fonts/Realest-Extended.otf");
+}
+@font-face {
+    font-family: tunel;
+    src: url("fonts/TunnelFront.ttf");
+}
+
+:root{
+    --i:calc(1vw+1vh);
+
+    --dark:#4F4A45;
+    --halfdark:#6C5F5B; 
+    --halflight:#ED7D31;
+    --light:#F6F1EE;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: tunel;
+    letter-spacing: 4.5px;
+}
+body{
+    
+    background-color: var(--dark);
+    color:var(--light);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    
+}
+
+header, footer{
+    border: var(--halflight) solid 5px;
+    
+    padding: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin:0px 15vw;
+    width:89vw;
+}
+header{
+    border-top:none;
+    border-radius: 0 0px 15px 15px;
+}
+header > *,
+footer > *{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav > ul{
+    display: flex;
+}
+nav > ul > li{
+    width:15vw;
+    list-style-type: none;
+}
+button{
+    background-color: var(--halfdark);
+    color:var(--light);
+    border:var(--halflight) solid 2px;
+    border-radius: 5em;
+
+    font-size:1.5em;
+    min-width:10vw;
+    min-height:2.5vh;
+
+    transition: .2s;
+}
+button:hover{
+    background-color: var(--dark);
+}
+button:active{
+    background-color: var(--halflight);
+    color:var(--dark);
+}
+
+section{
+    border-radius: 25px;
+    margin: 25vh 5vw;
+    background-color: var(--halfdark);
+    backdrop-filter: blur(15px) saturation(.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-width:75vw;
+    min-height: 55vh;
+}
+section > h1{
+    color:var(--halflight);
+    margin-bottom: 5vh;
+}
+section > div{
+    margin:100px;
+    position: relative;
+    width:25vw;
+    min-height:10vh;
+    margin:calc(var(--index) * 100);
+}
+section > div:nth-child(odd){
+    left:-10vw;
+}
+section > div:nth-child(even){
+    right:-10vw;
+}
+
+
+footer{
+    z-index: 1;
+    margin-top:15vh;
+    border-bottom:none;
+    border-radius: 15px 15px 0 0;
+    position: fixed;
+    bottom: 0;
+    transition: .2s;
+    transform: translateY(5vh);
+}
+#footrer-uper{
+    background-color: var(--halflight);
+    color:var(--light);
+    
+    border-radius: 25px;
+    border:var(--dark) solid 6px;
+    z-index: 5;
+    
+    position: fixed;
+    
+    min-width:1vw;
+    min-height: 1vh;
+    
+
+
+    left:50%;
+    bottom: 6vh;
+    padding-left: 5.5px;
+
+    font-size: xx-large;
+}
+
+#footrer-uper:hover > footer{
+    transform: translateY(0);
+}
+footer:hover{
+    transform: translateY(0);
+}
